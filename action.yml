@@ -1,0 +1,15 @@
+name: "Hello World"
+description: "Builda um container docker, que irá executar um código de extracao"
+inputs:
+  who-to-greet: # id do input
+    description: "Who to greet"
+    required: true
+    default: "World"
+outputs:
+  time: # id do output
+    description: "Time we greeted you"
+runs:
+  using: "docker"
+  image: "Dockerfile"
+  args:
+    - ${{ inputs.who-to-greet }}
